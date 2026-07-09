@@ -5,10 +5,11 @@
 }
 
 :root {
-  --text: #1a1a1a;
-  --muted: #555;
-  --accent: #2a6cf6;
-  --bg: #fff;
+  --text: #1c1c1e;
+  --muted: #6e6e73;
+  --accent: #1d4ed8;
+  --bg: #fafaf9;
+  --rule: #e4e4e0;
   --max-width: 680px;
   --gap: 3rem;
 }
@@ -16,10 +17,12 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text);
   background: var(--bg);
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem 6rem;
+  /* Thin accent bar at the very top */
+  border-top: 3px solid var(--accent);
 }
 
 .container {
@@ -30,69 +33,90 @@ body {
   gap: var(--gap);
 }
 
-/* Header */
+/* ── Header ──────────────────────────────── */
 header h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: -0.01em;
   line-height: 1.1;
+  color: var(--text);
 }
 
 header .title {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.4;
 }
 
-/* Section headings */
+/* ── Section chrome ──────────────────────── */
+section {
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+}
+
 h2 {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
-/* Intro */
+/* ── Intro ───────────────────────────────── */
 #intro p {
-  font-size: 1.05rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text);
 }
 
-/* Highlights */
+/* ── Highlights ──────────────────────────── */
 #highlights ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 #highlights li {
-  padding-left: 1rem;
+  padding-left: 1.1rem;
   position: relative;
+  font-size: 0.9375rem;
+  color: var(--text);
 }
 
 #highlights li::before {
-  content: "—";
+  content: "–";
   position: absolute;
   left: 0;
   color: var(--muted);
 }
 
-/* Featured Project */
+/* ── Featured Project ────────────────────── */
+.project-card {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
 #project h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
 }
 
 #project p {
-  margin-bottom: 0.75rem;
+  font-size: 0.9375rem;
+  margin-bottom: 0.85rem;
+  color: var(--text);
 }
 
 .project-link {
   color: var(--accent);
   text-decoration: none;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -100,18 +124,19 @@ h2 {
   text-decoration: underline;
 }
 
-/* Links */
+/* ── Links ───────────────────────────────── */
 .link-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem 1.25rem;
   align-items: center;
 }
 
 .link-list a {
   color: var(--accent);
   text-decoration: none;
+  font-size: 0.9375rem;
   font-weight: 500;
 }
 
@@ -121,9 +146,11 @@ h2 {
 
 .btn-resume {
   display: inline-block;
-  padding: 0.4rem 0.9rem;
+  padding: 0.35rem 0.85rem;
   border: 1.5px solid var(--accent);
-  border-radius: 4px;
+  border-radius: 3px;
+  font-size: 0.875rem !important;
+  transition: background 0.15s, color 0.15s;
 }
 
 .btn-resume:hover {
@@ -132,13 +159,17 @@ h2 {
   text-decoration: none !important;
 }
 
-/* Responsive */
+/* ── Responsive ──────────────────────────── */
 @media (max-width: 480px) {
   body {
-    padding: 2.5rem 1.25rem;
+    padding: 3rem 1.25rem 4rem;
   }
 
   header h1 {
-    font-size: 1.75rem;
+    font-size: 1.9rem;
+  }
+
+  header .title {
+    font-size: 0.875rem;
   }
 }
